@@ -7,9 +7,10 @@ export default function CharacterList(){
   const { characters } = useCharacters();
 
   const lineItems = characters.map(char => {
-    return (<Li key={char.id}>
-      <Character image={char.image} name={char.name}/>
-    </Li>
+    return (
+      <Li key={char.id}>
+        <Character image={char.image} name={char.name}/>
+      </Li>
     );
   });
   return <List>{lineItems}</List>;
@@ -20,7 +21,7 @@ list-style: none;
 display: grid;
 grid-template-columns: repeat(4, 1fr);
 justify-content: space-between;
-width: 100%;`;
+margin-left: 200px;`;
 
 const Li = styled.li`
 margin: 25px;
