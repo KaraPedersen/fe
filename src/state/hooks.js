@@ -60,7 +60,6 @@ const useFavorites = () => {
   const { state } = useLocation();
   const user = state[0];
   const [favorites, setFavorites] = useState([]);
-  // const [newFavorites, setNewFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -71,12 +70,7 @@ const useFavorites = () => {
       .then(() => setIsLoading(prev => !prev));
   }, []);
 
-  // useCallback(() => {
-  //   return fetch(`https://lit-ridge-31066.herokuapp.com/characters/user/${user.userId}`)
-  //     .then(res => res.json())
-  //     .then(res =>  setFavorites(res))
-  //     .then(() => setIsLoading(prev => !prev));
-  // }, [favorites]);
+
 
   const addFavorite = (character) => {
     return fetch('https://lit-ridge-31066.herokuapp.com/characters/user', {
@@ -102,8 +96,7 @@ const useFavorites = () => {
     })
       .then(res => res.json())
       .then(res => {
-        // const newArray = favorites.filter(char => char.characterId !== res.characterId);
-        // console.log(newArray);        
+           
         setFavorites(prev => prev.filter(char => char.characterId !== res.characterId));
         setIsLoading(prev => !prev);
       })
