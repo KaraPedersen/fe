@@ -26,7 +26,7 @@ export default function Auth(){
             onChange={changeUsername}/>
         </div>
         <div>
-          <label htmlFot="password"> Password </label>
+          <label htmlFor="password"> Password </label>
           <TextInput
             type="password"
             name="password"
