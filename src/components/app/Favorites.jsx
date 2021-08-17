@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './Header';
 import DetailedCharacterList from './DetailedCharacterList';
 
+
 export default function Favorites(){
   return (
     <Page>

@@ -8,9 +8,7 @@ export default function CharacterList(){
   const { characters } = useCharacters();
   const { favorites, addFavorite } = useFavorites();
 
-
   const lineItems = characters.map(char => {
-    
     return (
       <Li key={char.id}>
         <Character image={char.image} name={char.name}/>
@@ -21,8 +19,6 @@ export default function CharacterList(){
       </Li>
     );
   });
-
-  
   return <List>{lineItems}</List>;
 }
 
